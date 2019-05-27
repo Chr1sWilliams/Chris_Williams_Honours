@@ -6,7 +6,7 @@ Here you will find python notebooks that are intended to be read interactively w
 The thesis itself is self-contained, but should a reader desire to perform any of the computations, the computational experiments are made available.
 
 To run this, simply download (or clone) the repository and run the notebooks labelled `Chapter_*'. 
-The notebooks have also been printed to pdf if this is easier to read, opposed to installing any additional software.
+The notebooks have also been printed to pdf and can be read within the web-browser with no additional software required.
 The Python files only include functions made to be called upon in the notebooks and hidden away in these files for readability.
 A Jupyter environment is needed with Python 3. 
 This can be done through Anaconda: https://www.anaconda.com/distribution/ .
