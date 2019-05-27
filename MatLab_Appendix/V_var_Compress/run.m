@@ -1,0 +1,1 @@
+I = rgb2gray(imread('Qinian.jpg'));
