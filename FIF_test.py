@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from scipy import optimize
 from scipy.optimize import least_squares
 
+#function to generate a FIF IFS from data points
 def inter_gen(X,Y,d,inc_a = False):
     '''
     Y,X - n by 1 numpy array
@@ -37,7 +38,7 @@ def inter_gen(X,Y,d,inc_a = False):
         
     return A,b
     
-
+#function for the chaos game
 def chaos(A,b,p = None ,it =1000,burn = 5):
     
     assert(len(A) == len(b))
@@ -231,6 +232,7 @@ def moments(a_l,b_l,c_l,d_l,e_l,f_l,p_l,it = 20,n=6,direct = False):
     
     return Phi(a_l,b_l,c_l,d_l,e_l,f_l,p_l,it = it,n=n)@np.ones(n)
 
+#wrapper function for FIF
 def mom_wrap(A,b,it = 20,n=21,direct = False, moment_calc = False):
     
     assert len(A) == len(b)

@@ -1,11 +1,12 @@
 import numpy as np
 import sympy as sp
-#import autograd.numpy as np
 
 
+#tau function as in text
 def tau(n,m):
     return ((n+m)+1)*(n+m)/2 + m
 
+#inverse tau function 
 def tau_inv(k):
     
     def fl(k):
@@ -16,6 +17,7 @@ def tau_inv(k):
     
     return i,j
 
+#inverse for add function
 def add_inv(n):
 
     ans = np.zeros((n+1,2))
@@ -27,6 +29,8 @@ def add_inv(n):
         
     return ans
 
+
+#compute the trinomial cp-efficients quickly 
 def trinomial ( i, j, k ):
 
 #This function was taken from the internet 
@@ -74,6 +78,8 @@ def trinomial ( i, j, k ):
 
     return value
 
+
+#construct the matrix `phi'
 def A_r(a,b,c,d,e,f,N=6,rational= False):
     
     A = np.zeros((N,N))
@@ -115,7 +121,7 @@ def A_r(a,b,c,d,e,f,N=6,rational= False):
           
     return A
 
-
+#make the operator Phi
 def Phi(a_l,b_l,c_l,d_l,e_l,f_l,p_l,it = 1,n = 6,rational = False):
     
     assert len(a_l) == len(b_l) and len(a_l) == len(p_l)
@@ -138,6 +144,7 @@ def Phi(a_l,b_l,c_l,d_l,e_l,f_l,p_l,it = 1,n = 6,rational = False):
         
     return mat
 
+#function that computes the moments
 def moments(a_l,b_l,c_l,d_l,e_l,f_l,p_l,it = 20,n=6,direct = False):
     
     if direct:
@@ -156,6 +163,7 @@ def moments(a_l,b_l,c_l,d_l,e_l,f_l,p_l,it = 20,n=6,direct = False):
     
     return Phi(a_l,b_l,c_l,d_l,e_l,f_l,p_l,it = it,n=n)@np.ones(n)
 
+#function for eltons theorem
 def elt(X,size = 21):
     
     ans = np.zeros(size)
